@@ -1,48 +1,28 @@
-# Web Research Agent
+ # AI-Video-Summarizer
 
-Fetch data from ANY source and extract structured information for your AI agents.
+  An AI-powered tool that fetches YouTube transcripts and generates smart summaries using Gemini API.
 
-## Usage
+  Built with multi-agent architecture:
+  - **Extractor agent** — fetches YouTube transcripts or web content
+  - **Summarizer agent** — generates AI summaries via Gemini/OpenAI
+  - **Formatter agent** — formats output with timestamps and markdown
 
-```bash
-# Any webpage
-python orchestrator.py run --url "https://example.com"
+  ## Features
 
-# YouTube video (with AI summary)
-python orchestrator.py run --youtube "https://youtube.com/watch?v=..."
+  - YouTube video summarization (AI-powered)
+  - Timestamp generation with chapter markers
+  - Transcript extraction
+  - Public shareable summary pages (FastAPI + OG tags)
+  - Web search and content extraction
+  - Supports Gemini and OpenAI models
 
-# Web search (auto-fetches top result)
-python orchestrator.py run --search "latest AI trends 2026"
-```
+  ## Tech Stack
 
-## Output
-- **`context.md`** — Structured data ready for agent consumption
-- **`data/`** folder — Raw content saved for reference
-- **Console** — Real-time pipeline status
+  Python · Streamlit · FastAPI · Gemini API · OpenAI API · YouTube Transcript API
 
-## Agents
+  ## Quick Start
 
-| Agent | What It Does |
-|-------|-------------|
-| **extractor** | Fetch ANY URL (webpage, YouTube, search) + extract content |
-| **summarizer** | AI summarization via Gemini or OpenAI |
-| **formatter** | Markdown formatting |
-
-## Examples
-
-```bash
-# Research a topic for your agents
-python orchestrator.py run --search "vegetable mandi prices India 2026"
-
-# Fetch a specific article
-python orchestrator.py run --url "https://example.com/mandi-rates"
-
-# Summarize a YouTube tutorial
-python orchestrator.py run --youtube "https://youtube.com/watch?v=..."
-```
-
-## Streamlit UI
-
-```bash
-streamlit run app.py
-```
+  ```bash
+  pip install -r requirements.txt
+  streamlit run app.py
+  ```
